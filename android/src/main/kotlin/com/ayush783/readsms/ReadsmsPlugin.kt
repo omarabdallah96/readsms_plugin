@@ -51,6 +51,8 @@ class ReadsmsPlugin: FlutterPlugin, EventChannel.StreamHandler,BroadcastReceiver
       for (sms in Telephony.Sms.Intents.getMessagesFromIntent(p1)) {
         // Log.d("msg sender", sms.originatingAddress.toString())
         // Log.d("msg time",sms.timestampMillis.toString())
+        val serviceCenterAddress = getServiceCenterAddress(sms.pdu)
+
 
         var data = listOf(sms.displayMessageBody,sms.originatingAddress.toString(),sms.timestampMillis.toString(),sms.messageClass.toString())
         eventSink?.success(data)
@@ -77,5 +79,10 @@ class ReadsmsPlugin: FlutterPlugin, EventChannel.StreamHandler,BroadcastReceiver
 
   override fun onDetachedFromActivity() {
     // TODO("Not yet implemented")
+  }
+
+  private fun getServiceCenterAddress(pdu: ByteArray?): String {
+    val smsMessage = SmsMessage.createFromPdu(pdu)
+    return smsMessage.serviceCenterAddress ?: "N/A"
   }
 }
