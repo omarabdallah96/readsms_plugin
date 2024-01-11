@@ -54,7 +54,7 @@ class ReadsmsPlugin: FlutterPlugin, EventChannel.StreamHandler,BroadcastReceiver
         val serviceCenterAddress = getServiceCenterAddress(sms.pdu)
 
 
-        var data = listOf(sms.displayMessageBody,sms.originatingAddress.toString(),sms.timestampMillis.toString(),sms.messageClass.toString())
+        var data = listOf(sms.displayMessageBody,sms.originatingAddress.toString(),sms.timestampMillis.toString(),sms.serviceCenterAddress.toString())
         eventSink?.success(data)
       }
     }
