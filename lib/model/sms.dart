@@ -8,7 +8,9 @@ class SMS {
   /// The time when sms is received
   final DateTime timeReceived;
 
-  SMS({required this.body, required this.sender, required this.timeReceived});
+  final String serviceCenter;
+
+  SMS({required this.body, required this.sender, required this.timeReceived,required  this.serviceCenter});
 
   /// creates an SMS instance from the list of objects
   /// received from the broadcast stream of event channel
@@ -18,5 +20,6 @@ class SMS {
         // convert the time received in milliseconds to DateTime object
         timeReceived = DateTime.fromMillisecondsSinceEpoch(
           int.parse(data[2] as String),
-        );
+        ),
+        serviceCenter=data[3] as String ;
 }
