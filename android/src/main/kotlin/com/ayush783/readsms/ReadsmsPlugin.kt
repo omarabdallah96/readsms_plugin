@@ -67,14 +67,14 @@ class ReadsmsPlugin: FlutterPlugin, EventChannel.StreamHandler,BroadcastReceiver
   }
 
   override fun onDetachedFromActivityForConfigChanges() {
-    TODO("Not yet implemented")
+    // TODO("Not yet implemented")
   }
 
   override fun onReattachedToActivityForConfigChanges(p0: ActivityPluginBinding) {
-    TODO("Not yet implemented")
+    // TODO("Not yet implemented")
   }
 
   override fun onDetachedFromActivity() {
-    TODO("Not yet implemented")
+    // TODO("Not yet implemented")
   }
 }
