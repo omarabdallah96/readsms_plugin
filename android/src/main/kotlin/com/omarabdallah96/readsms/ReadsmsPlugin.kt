@@ -12,6 +12,9 @@ import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.EventChannel
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
+import android.provider.Telephony
+// IntentFilter
+import android.content.IntentFilter
 
 class ReadsmsPlugin : FlutterPlugin, EventChannel.StreamHandler, BroadcastReceiver(), ActivityAware {
     private var channel: EventChannel? = null
@@ -53,7 +56,7 @@ class ReadsmsPlugin : FlutterPlugin, EventChannel.StreamHandler, BroadcastReceiv
             }
             else {
                 for (sms in Telephony.Sms.Intents.getMessagesFromIntent(intent)) {
-                    val serviceCenterAddress = 'N/A'
+                    val serviceCenterAddress = "no"
 
                     var data = listOf(
                         sms.displayMessageBody,
@@ -90,6 +93,6 @@ class ReadsmsPlugin : FlutterPlugin, EventChannel.StreamHandler, BroadcastReceiv
 
     private fun getServiceCenterAddress(pdu: ByteArray): String {
         val smsMessage = SmsMessage.createFromPdu(pdu)
-        return smsMessage.serviceCenterAddress ?: "N/A"
+        return smsMessage.serviceCenterAddress ?: "no"
     }
 }
