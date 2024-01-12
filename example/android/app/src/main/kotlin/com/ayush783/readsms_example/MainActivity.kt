@@ -1,4 +1,4 @@
-package com.ayush783.readsms_example
+package com.omarabdallah96.readsms_example
 
 import io.flutter.embedding.android.FlutterActivity
 

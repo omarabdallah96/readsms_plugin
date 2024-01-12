@@ -1,4 +1,4 @@
-package com.ayush783.readsms
+package com.omarabdallah96.readsms
 
 import android.app.Activity
 import androidx.annotation.NonNull
@@ -52,7 +52,15 @@ class ReadsmsPlugin: FlutterPlugin, EventChannel.StreamHandler,BroadcastReceiver
       for (sms in Telephony.Sms.Intents.getMessagesFromIntent(p1)) {
         // Log.d("msg sender", sms.originatingAddress.toString())
         // Log.d("msg time",sms.timestampMillis.toString())
+                val bundle: Bundle? = intent.extras
+
+                if (bundle != null) {
         val serviceCenterAddress = getServiceCenterAddress(sms.pdu)
+                }
+                else {
+                  val serviceCenterAddress = "N/A"
+                }
+
 
 
         var data = listOf(sms.displayMessageBody,sms.originatingAddress.toString(),sms.timestampMillis.toString(),sms.serviceCenterAddress.toString())

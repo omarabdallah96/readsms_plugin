@@ -1,7 +1,7 @@
 name: readsms
 description: A flutter plugin that reads incoming SMS on device as a broadcast stream.
 version: 0.0.2+2
-homepage: "https://github.com/Ayush783/readsms_plugin"
+homepage: "https://github.com/omarabdallah96/readsms_plugin"
 
 environment:
   sdk: ">=2.17.0 <3.0.0"
@@ -20,7 +20,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.ayush783.readsms
+        package: com.omarabdallah96.readsms
         pluginClass: ReadsmsPlugin
       ios:
         pluginClass: ReadsmsPlugin

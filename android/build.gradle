@@ -1,4 +1,4 @@
-group 'com.ayush783.readsms'
+group 'com.omarabdallah96.readsms'
 version '1.0-SNAPSHOT'
 
 buildscript {

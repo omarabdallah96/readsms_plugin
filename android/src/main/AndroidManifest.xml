@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.ayush783.readsms">
+  package="com.omarabdallah96.readsms">
 <!--    <application>-->
 <!--        <receiver android:name=".ReadsmsPlugin"-->
 <!--            android:enabled="true"-->
