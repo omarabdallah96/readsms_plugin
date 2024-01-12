@@ -3,6 +3,7 @@ package com.omarabdallah96.readsms
 import android.app.Activity
 import androidx.annotation.NonNull
 import android.telephony.SmsMessage
+import android.os.Bundle
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.EventChannel
